@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कैद भावना</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'webpage.css' %}" />
+    <script src="https://kit.fontawesome.com/f33cb3a1a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <body>
+        <!-- header section -->
+        <header>
+            <div class="sahitya"><span>साहित्य❣️रङ्ग</span></div>
+
+            <strong>
+                <ul>
+                    <li><a href="/">मुख्य पृष्ठ</a></li>
+                    <li><a href="#">प्रिय</a></li>
+                    <li><a href="{%url 'contact' %}">सम्पर्क</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </strong>
+        </header>
+
+        <!-- now we will create a body section for poem -->
+
+        <section>
+            <div class="rang_main">
+
+                <div class="rang_left_div">
+                    <div class="rang_kabita">
+                        <div class="paragraph">
+                            <p style="font-size: 2rem;">{{poem.title}}</p>
+                            <p style="font-size: .5rem;">{{poem.writer}} </p>
+                            <p> {{ poem.date|date:"F d, Y" }}</p>
+
+                        </div>
+
+                        <div class="content">
+                            {{poem.poem_text|linebreaksbr}}
+
+
+                        </div>
+                        <br>
+
+                        <!-- comment dina lai -->
+                        <div class="pratikriya">
+                            <span>प्रतिकृया</span><br>
+                            <input type="text" placeholder="तिप्पनी लेख्नुहोस्...............">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- left we put calender and other poems scroll
+                 -->
+                <div class="rang_right_div">
+                    <div class="calender">
+                        <div class="date_time"><span>६:१७ बेलुका</span>
+                            <span>04 NOV 2022</span>
+                        </div>
+                        <div class="day">
+                            <span style="font-size: 2rem; ">कार्तिक,२०७९</span><br>
+                            <span style="font-size: 6rem;">१८</span>
+                            <span>शुक्रबार</span>
+                        </div>
+
+
+                    </div>
+                    <div class="scroll_field">
+                        <div class="lokpriya">लोकप्रिय पोस्टहरु</div>
+                        <div class="aakash">
+                            <img src="static/image1.jpg" alt="">
+                            <span>
+                                <p style="font-size: 2rem;">{{random_poem.title}}</p>
+                                <p>{{ random_poem.writer }}</p>
+                                <p>{{ poem.date|date:"F d, Y" }}</p>
+
+                            </span>
+
+                        </div>
+                        <div class="prem">
+                            <img src="static/image1.jpg" alt="">
+                            <span>
+                                <p style="font-size: 2rem;">{{random_poem.title}}</p>
+                                <p>{{ random_poem.writer }}</p>
+                                <p>{{ poem.date|date:"F d, Y" }}</p>
+
+                            </span>
+
+                        </div>
+                        <!-- <div class="prem">
+                            <img src="static/image1.jpg" alt="">
+                            <span>
+                                <p style="font-size: 2rem;">आकाश:</p>
+                                <p>साहित्यपोस्ट २०७८ कार्तिक ३०</p>
+                                <p>{{ poem.date|date:"F d, Y" }}</p>
+
+                            </span>
+
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+        <footer>
+            <div class="foot">
+                <span><i class="fa-regular fa-copyright"></i>Copyright 2022 साहित्य रङ्ग</span>
+            </div>
+        </footer>
+    </body>
+
+</html>

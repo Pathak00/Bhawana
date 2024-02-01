@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>कैद भावना</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'webpage.css'%}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/f33cb3a1a4.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <!-- header section -->
+  <header>
+    <div class="sahitya"><span>साहित्य❣️रङ्ग</span></div>
+
+    <strong>
+      <ul>
+        <li><a href="#">मुख्य पृष्ठ</a></li>
+        <li><a href="#">प्रिय</a></li>
+        <li><a href="{%url 'contact' %}">सम्पर्क</a></li>
+        <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+      </ul>
+    </strong>
+  </header>
+  <!-- this is where we will put content -->
+  <section>
+    <div class="main">
+      <div class="left_box">
+        <span style="text-align: center">
+          <h2>कविता</h2>
+        </span>
+        <div class="kabita_box">
+          {% for poem in poems %}
+          <div style="background-color: rgb(249, 165, 152); border: 1px solid greenyellow;">
+            <a href="{% url 'rang' pk=poem.pk %}">
+              <span>
+                <img src="static/image1.jpg" alt="" />
+              </span> <br>
+              <span style="margin: 1rem 1rem;">
+                <p>{{poem.title}}</p>
+                <span class="rupak">-{{poem.writer}}</span><br />
+              </span>
+            </a>
+          </div>
+          {%endfor%}
+          <!-- <div>
+            <a href="#">
+              <span>
+                <img src="static/image1.jpg" alt="" />
+              </span>
+              <span class="text">
+                <h3>रङ्ग</h3>
+                मेरा आखाँहरुका रङ्ग 😍<br />
+                <span class="rupak">-रुपक पाठक</span><br />
+              </span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>
+                <img src="static/image1.jpg" alt="" />
+              </span>
+              <span>
+                <h3>रङ्ग</h3>
+
+                मेरा आखाँहरुका रङ्ग 😍<br />
+                <span class="rupak">-रुपक पाठक</span><br />
+              </span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>
+                <img src="static/image1.jpg" alt="" />
+              </span>
+              <span>
+                <h3>रङ्ग</h3>
+
+                मेरा आखाँहरुका रङ्ग 😍<br />
+                <span class="rupak">-रुपक पाठक</span><br />
+              </span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <span>
+                <img src="static/image1.jpg" alt="" />
+              </span>
+              <span>
+                <h3>रङ्ग</h3>
+
+                मेरा आखाँहरुका रङ्ग 😍<br />
+                <span class="rupak">-रुपक पाठक</span><br />
+              </span>
+            </a>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="right_box">
+        <span style="text-align: center">
+          <h2>कृति</h2>
+        </span>
+
+        <div class="right_icon">
+          {% for poem in poems %}
+          <div class="kriti_box" style="background-color: rgb(249, 165, 152); border: 1px solid greenyellow;">
+            <span>
+
+              <a href="{% url 'rang' pk=poem.pk %}">
+
+                <p style="margin: 1rem;"> {{poem.title}}</p>
+
+
+              </a>
+              <!-- <a href="link">
+                <li>प्रेम</li>
+              </a>
+              <a href="aakash.html">
+                <li>आकाश</li>
+              </a>
+              <a href="link">
+                <li>हराको मानिस</li>
+              </a>
+              <a href="link">
+                <li>चाहाना</li>
+              </a> -->
+            </span>
+
+          </div>{%endfor%}
+          <!-- <div class="icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-google-drive"></i>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="foot">
+      <span><i class="fa-regular fa-copyright"></i>Copyright 2022 साहित्य रङ्ग</span>
+    </div>
+  </footer>
+</body>
+
+</html>
